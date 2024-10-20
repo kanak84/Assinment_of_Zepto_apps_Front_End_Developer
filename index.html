@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=3.0">
+    <title>Book Wishlist</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- The main container for our app -->
+
+
+    <div class="app-container">
+        <!-- App title -->
+        <h1>Book Wishlist</h1>
+        <!-- Input field and button for adding books -->
+        <div class="input-container">
+            <input type="text" id="book-input" placeholder="Enter book title...">
+            <button id="add-button">Add Book</button>
+        </div>
+        <!-- Unordered list to display books -->
+        <ul id="book-list"></ul>
+    </div>
+
+<style>
+* {
+  box-sizing: border-box;
+}
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 100%;
+  font-size: 16px;
+  padding: 12px 20px 12px 40px;
+  border: 1px solid #ddd;
+  margin-bottom: 12px;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+  background-color: #f6f6f6;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  background-color: #eee;
+}
+</style>
+<body>
+
+<h2>My Search bar</h2>
+
+<input type="text" id="myInput" onkeyup="myFunction()" placeholder="Search for names.." title="Type in a name">
+
+<ul id="myUL">
+  <li><a href="#">Romeo & juliet</a></li>
+  <li><a href="#">Tragedy of Hamlet</a></li>
+  
+</ul>
+
+<div id="parent-container">
+
+
+  
+<button onclick="loadAPIData()"> Click for Data </button>
+
+
+
+
+<script src="vanilla.js"></script>
+</div>
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+</body>
+<!-- pagination elements -->
+        <h2> Pagination</h2>
+
+<div class="pagination">
+  <a href="#">&laquo;</a>
+  
+<a class="active" href="1">1</a>
+ <a href="#">2</a>
+  <a href="#">3</a>
+  <a href="#">4</a>
+  <a href="#">5</a>
+  <a href="#">6</a>
+  <a href="#">7</a>
+  <a href="#">8</a>
+  <a href="#">&raquo;</a>
+</div>
+</div>
+            Next >>
+            </a>
+        </div>
+    <!-- Link to the JavaScript file -->
+   
+    <script src="script.js"></script>
+</body>
+</html>
